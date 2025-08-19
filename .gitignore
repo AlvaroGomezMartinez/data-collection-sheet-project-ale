@@ -1,0 +1,20 @@
+# Ignore everything by default
+*
+
+# But not these files...
+!.gitignore
+!appsscript.json
+!Code.js
+!currentScript.js
+!currentHelp.html
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore PDF and other non-source files
+*.pdf
+*.log
+*.tmp
+
+# Ignore node_modules if present
+node_modules/

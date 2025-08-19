@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <style>
+        a.link-style {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Initial Setup</h2>
+    <p>You will need to create an individual file for each student who is on the radar. The idea is to generate weekly
+        sheets that will be used for data collection. This spreadsheet will automatically create the weekly sheets for
+        you and
+        link each sheet's data to the <em>Summary</em> sheet.<br><br>Below are the steps for the initial setup of a
+        student's
+        <i>Radar Data Collection Spreadsheet</i>.
+    </p>
+
+    <ol>
+        <li>Use this downloaded spreadsheet as a template for each of your students on the radar. Do this by making a
+            copy of
+            the spreadsheet in your Google Drive and placing it in a folder where you can easily access it (for example,
+            as a
+            hyperlink on your Portal or a bookmark in your Chrome browser).</li>
+        <li>Within the spreadsheet, locate the sheet named <i>Week_Template</i> and enter the student’s classes in the
+            yellow-colored cells (O2 through X2). The template allows space for up to 10 classes. If you do not need all
+            10,
+            simply use the first few cells and leave the remaining ones blank. The class information will automatically
+            transfer
+            to the cells in column A of the <i>Week_Template</i>.</li>
+        <li>Create the weekly data collection sheets by either (1) closing this text box, clicking on <i>📈 Data
+                Collection
+                Information 📉</i>, then selecting <i>Create Weekly Sheets</i>; or (2) clicking on <a href="#"
+                class="link-style" onclick="setupWeeklyBehaviorSheets(); return false;">this hyperlink</a> and giving
+            the browser a few seconds to
+            start the script.</li>
+        <li>When prompted, enter the date you want to begin data collection, then the number of weekly sheets you would
+            like
+            to create.</li>
+    </ol>
+
+    <p>Give the script a few seconds to generate the weekly sheets and link them to the <i>Summary</i> sheet. Each
+        weekly
+        sheet includes a column for each weekday, so the dates will begin on the Monday prior to the start date you
+        entered.<br><br>Once the script finishes running, you will see the weekly sheets listed across the bottom of the
+        spreadsheet. You are now ready to input data into the <i>Occurrences</i> and <i>Rating</i> cells. The data will
+        automatically update in both the weekly sheets and the summary sheet.</p>
+
+    <p><b>📽️ <a href="https://app.screencastify.com/v2/watch/fria3sAT5ttiNPF7HRLq" target="_blank">Click on this
+                hyperlink</a> for a video walking you through the process above.</b></p>
+
+    <script>
+        function setupWeeklyBehaviorSheets() {
+            // This function will be called when the link is clicked
+            google.script.run
+                // .withSuccessHandler(() => alert('Weekly sheets created successfully!'))
+                .withFailureHandler(error => alert('Error: ' + error.message))
+                .setupWeeklyBehaviorSheets();
+        }
+    </script>
+</body>
+
+</html>
